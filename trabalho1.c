@@ -13,7 +13,7 @@ void buscaBinariaRec(int c, int f, int *v, int n){
     //guarda índice do meio do vetor
     int index = (c+f)/2;
 
-    if (v[index] == n){
+    if (v[index] == n){ //se o valor for encontrado
         printf("SIM\n");
         return;
     }
