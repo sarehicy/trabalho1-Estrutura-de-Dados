@@ -14,6 +14,24 @@ void inversaoDoVetor(int vetor[], int size){
     }
 
 }
+
+//Função para busca sequêncial (2) 
+void buscaSequencial(int vetor[], int size, int numBuscado){
+    int flag = 0;
+
+    for(int i = 0; i < size; i++){
+        if(vetor[i] == numBuscado){
+            printf("SIM");
+            flag = 1;
+            break;
+        }
+    }
+
+    if(flag == 0){
+        printf("NAO");
+    }
+}
+
 void buscaBinariaRec(int c, int f, int *v, int n){
     //c: começo do vetor, f: final do vetor, v: vetor, n: numero buscado
 
@@ -58,6 +76,8 @@ int main(){
                 break;
             case 2:
                 //busca sequencial
+                scanf("%d", &numBuscado);
+                buscaSequencial(vetor, size, numBuscado);
                 break;
             case 3:
                 scanf("%d", &numBuscado);
