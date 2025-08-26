@@ -1,6 +1,19 @@
 #include <stdio.h>
 
+//Função para inversao dos elementos do vetor(1)
+void inversaoDoVetor(int vetor[], int size){
+    // c: começo do vetor (indice 0); f: final do vetor (tamanho menos 1)
+    int c = 0; 
+    int f = size-1; 
+    while (f>c) {
+        int aux = vetor[c]; 
+        vetor[c] = vetor[f]; 
+        vetor[f] = aux; 
+        c++; 
+        f--; 
+    }
 
+}
 void buscaBinariaRec(int c, int f, int *v, int n){
     //c: começo do vetor, f: final do vetor, v: vetor, n: numero buscado
 
