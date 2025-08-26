@@ -32,6 +32,32 @@ void buscaSequencial(int vetor[], int size, int numBuscado){
     }
 }
 
+//Função para busca binária interativa (3)
+void buscaBinariaIterativa(int vetor[], int size, int numBuscado){
+    int inicio = 0;
+    int fim = size - 1;
+    int flag = 0;
+
+    while(inicio <= fim){
+        int meio = (inicio + fim) / 2;
+        if(numBuscado == vetor[meio]){
+            printf("SIM");
+            flag = 1;
+            break;
+        }else{
+            if(numBuscado > vetor[meio]){
+                inicio = meio + 1;
+            }else{
+                fim = meio - 1;
+            }
+        }
+    }
+
+    if(flag == 0){
+        printf("NAO");
+    }
+}
+
 void buscaBinariaRec(int c, int f, int *v, int n){
     //c: começo do vetor, f: final do vetor, v: vetor, n: numero buscado
 
@@ -73,6 +99,7 @@ int main(){
         switch(operacao){
             case 1:
                 //inverter ordem
+                inversaoDoVetor(vetor, size);
                 break;
             case 2:
                 //busca sequencial
@@ -80,10 +107,12 @@ int main(){
                 buscaSequencial(vetor, size, numBuscado);
                 break;
             case 3:
+                // busca binária iterativa
                 scanf("%d", &numBuscado);
-                //busca binaria iterativa
+                buscaBinariaIterativa(vetor, size, numBuscado);
                 break;
             case 4:
+                // busca binária recursiva
                 scanf("%d", &numBuscado);
                 buscaBinariaRec(0, size-1, vetor, numBuscado);
                 break;
